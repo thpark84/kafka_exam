@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kafka_test
+  kafka:
+    bootstrap-servers: localhost:9092
+#   producer:
+#     retries: 0
+#     acks: all
+#     key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#     value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: group-test
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+logging:
+  level:
+    root: error
+    com.lgcns.kafka_test.service: info
+kafka-info:
+  topic-name: topic-intellij
+  group-name: group-test
